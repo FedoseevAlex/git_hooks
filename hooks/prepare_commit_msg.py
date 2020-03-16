@@ -21,7 +21,7 @@ def create_commit_message(branch_name: str) -> str:
 
     if match:
         issue, num = match.groups()
-        message = f"{issue.replace('_', ' ').capitalize()} #{num}:\n"
+        message = f"{issue.replace('_', '-').upper()} #{num}:\n"
 
     return message
 
