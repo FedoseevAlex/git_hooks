@@ -21,7 +21,7 @@ def create_commit_message(branch_name: str) -> str:
 
     if match:
         issue, num = match.groups()
-        message = f"{issue.replace('_', '-').upper()} #{num}:\n"
+        message = f"\n{issue.replace('_', '-').upper()}-{num}\n"
 
     return message
 
@@ -42,7 +42,7 @@ def get_git_status():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 3:
+    if len(sys.argv) >= 3:
         sys.exit(0)
 
     commit_msg_file = sys.argv[1]
